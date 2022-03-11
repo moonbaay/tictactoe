@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+}
+h1{
+    text-align: center;
+}
+.grid-center{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    width: 350px;
+    height: 350px;
+    margin: 3rem auto;
+}
+.cell{
+    font-size: 4.5rem;
+     /* border: 2px solid black; */
+     text-align: center;
+     height: 116px;
+     padding-top: 10px;
+     
+}
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6),
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-top: 2px solid black;
+}
+.cell:nth-child(2),
+.cell:nth-child(5),
+.cell:nth-child(8){
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+}
+button{
+    height: 110px;
+    width: 100px;
+    font-size: 4.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.cell:hover{
+    background-color: lightgray;
+}
