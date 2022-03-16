@@ -18,23 +18,13 @@ function convert2DArray(array,part) {
     return newArr;
 }
 
-
 function turn(){
     return circleTurn != circleTurn;
 }
 
 let currentTurn = circleTurn ? xMark : oMark;
 
-function checkWinner(){
-    
-if(winningCombination.some(item => item.every((val,index) => val === o[index]))){
-    winner = oMark;
-}else if (winningCombination.some(item => item.every((val,index) => val === x[index]))){
-    winner = xMark;
-}
-return winner;
-}
-
+ 
 function placement(e){
     const box = e.target;
     const id = parseInt(box.id);
@@ -46,20 +36,35 @@ function placement(e){
     if(currentTurn === oMark){
         x.push(id);
         
-    }
-    if(currentTurn === xMark){
+        
+    }else if(currentTurn === xMark){
         o.push(id);
     }
-    message.textContent = checkWinner();
-    console.log(x);
+    if(checkWinner()){
+        message.textContent = `the winner is ${checkWinner()}`;
+    }
+   
 }
+ 
 
+function checkWinner(){
+  if (winningCombination.some((item) => item.every((val) => o.includes(val)))) {
+    winner = oMark;
+  } else if (
+    winningCombination.some((item) => item.every((val) => x.includes(val)))
+  ) {
+    winner = xMark;
+  }
+  //shorter
+  //winningCombination.some(item => item.every(o.includes) 
+  return winner;
+}
 //compare array
 // console.log(winningCombination.some(item => item.every((val,index) => val === x[index])));
 // console.log(topRow.every((val,index) => val === x[index]));
 
  const button = document.querySelectorAll("button");
  button.forEach((btn)=>{
-     btn.addEventListener("click", placement,{once:true});
+    btn.addEventListener("click", placement,{once:true});
      
  })
