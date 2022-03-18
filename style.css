@@ -10,7 +10,7 @@ h1{
     grid-template-columns:  1fr 1fr 1fr;
     width: 350px;
     height: 350px;
-    margin: 10rem auto;
+    margin: 5rem auto;
 }
 .cell{
     font-size: 4.5rem;
