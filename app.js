@@ -45,7 +45,7 @@ function placement(e) {
   }
   if (checkWinner()) {
     messageModal.style.visibility = "visible";
-    message.textContent = `the winner is ${checkWinner()}`;
+    message.textContent = `The winner is ${checkWinner()}`;
   } else if (slot.length == 9 && !checkWinner()) {
     messageModal.style.visibility = "visible";
     message.textContent = `It's a draw`;
